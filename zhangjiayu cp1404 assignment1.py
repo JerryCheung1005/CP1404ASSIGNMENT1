@@ -47,6 +47,7 @@ def watch_movie(movies_lists):
                 print('Invalid input; enter a valid number')
     else:
         print('No more movies to watch!')
+        #Avoid collapes.
 
 def write_movies(movies_lists):
     # title
@@ -70,6 +71,7 @@ def write_movies(movies_lists):
                     break
             except:
                 print('Invalid input; enter a valid number')
+                #Get new movies from user.
 
     # Category
     while True:
@@ -82,6 +84,7 @@ def write_movies(movies_lists):
     print('{} ({} from {}) added to movie list'.format(title, category, year))
     movies_lists.append([title, year, category, 'u'])
     movies_lists.sort(key=lambda x: x[1], reverse=False)
+    # Get new movies from user
 
 def save_movies(movies_lists):
     filecsv = open('movies.csv', 'w', newline='')
@@ -91,6 +94,7 @@ def save_movies(movies_lists):
     filecsv.close()
     print('{} movies saved to movies.csv'.format(len(movies_lists)))
     print('Have a nice day :)')
+    #Quit and print farewell word.
 
 if __name__ == '__main__':
 
@@ -107,6 +111,7 @@ if __name__ == '__main__':
             movies_lists.append(lists)
     movies_lists.sort(key = lambda x:x[1],reverse=False)
     print('{} movies loaded'.format(len(movies_lists)))
+    #Read ".csv" files.
 
     while True:
         print('Menu:')
@@ -128,3 +133,4 @@ if __name__ == '__main__':
                 break
         else:
             print('Invalid menu choice')
+            #Menu.
